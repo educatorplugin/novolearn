@@ -1,0 +1,50 @@
+@mixin gridColumn {
+    padding: 0 15px;
+}
+
+%button {
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    padding: 9px 16px;
+    text-shadow: none;
+    transition: background .2s ease-out, color .2s ease-out;
+}
+
+%clearAfter {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+%faIcon {
+    display: inline;
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+%pagination {
+    margin: 0 0 16px;
+
+    a:hover,
+    .page-numbers.current {
+        background: $textLightColor;
+        border-color: $textLightColor;
+        color: #fff;
+    }
+
+    .page-numbers {
+        border: 2px solid $lightGrey;
+        border-radius: 4px;
+        display: inline-block;
+        margin: 0 0 4px;
+        padding: 4px 12px;
+        transition: background .2s ease-out, border-color .2s ease-out, color .2s ease-out;
+    }
+}

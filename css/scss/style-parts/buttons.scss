@@ -1,0 +1,22 @@
+.button {
+    @extend %button;
+
+    &_small {
+        font-size: 14px;
+        padding: 6px 14px;
+    }
+
+    &_large {
+        padding: 14px 22px;
+    }
+
+    &_secondary {
+        background: #999;
+        color: #fff;
+
+        &:hover {
+            background: #555;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,370 @@
+.hentry {
+    word-wrap: break-word;
+}
+
+.post-thumbnail {
+    a {
+        display: block;
+    }
+}
+
+.entry-title {
+    margin: 0;
+}
+
+.posted-on {
+    .updated {
+        &:not(.published) {
+            display: none;
+        }
+    }
+}
+
+.entry-meta {
+    font-size: $sizeTextSmall;
+
+    &_inline {
+        > span {
+            margin: 0 20px 0 0;
+        }
+
+        .byline {
+            &:before {
+                @extend %faIcon;
+                content: '\f007';
+                margin-right: 5px;
+            }
+        }
+
+        .posted-on {
+            &:before {
+                @extend %faIcon;
+                content: '\f017';
+                margin-right: 5px;
+            }
+        }
+
+        .cat-links {
+            &:before {
+                @extend %faIcon;
+                content: '\f07c';
+                margin-right: 5px;
+            }
+        }
+
+        .tags-links {
+            &:before {
+                @extend %faIcon;
+                content: '\f02b';
+                margin-right: 5px;
+            }
+        }
+
+        .comments-link {
+            &:before {
+                @extend %faIcon;
+                content: '\f0e6';
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.pagination {
+    @extend %pagination;
+}
+
+.page-links {
+    margin: 0 0 20px;
+
+    a,
+    > span {
+        border: 1px solid $lightGrey;
+        display: inline-block;
+        margin: 0 2px;
+        padding: 0 8px;
+    }
+
+    a {
+        &:hover {
+            background: $textLightColor;
+            border-color: $textLightColor;
+            color: #fff;
+        }
+    }
+
+    .page-links-title,
+    .screen-reader-text {
+        border: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.hentry_single {
+    margin: 0 0 40px;
+
+    .entry-header {
+        margin-bottom: 40px;
+    }
+
+    .entry-meta {
+        border-bottom: 1px solid $lightGrey;
+        border-top: 1px solid $lightGrey;
+        margin: 10px 0 0;
+        padding: 10px 0;
+    }
+
+    .post-thumbnail {
+        margin: 0 0 40px;
+    }
+}
+
+.posts-list {
+    .hentry {
+        border-radius: 4px;
+        box-shadow: $blockShadow;
+        margin: 0 0 40px;
+    }
+
+    .sticky {
+        background: $lightBgColor;
+    }
+
+    .post-thumbnail {
+        margin: 0;
+
+        + .entry-header {
+            border-top: 0;
+        }
+
+        img {
+            border-radius: 4px 4px 0 0;
+        }
+    }
+
+    .entry-header {
+        border: 1px solid $lightGrey;
+        border-bottom: 0;
+        border-radius: 4px 4px 0 0;
+        padding: 20px;
+    }
+
+    .has-post-thumbnail .entry-header {
+        border-radius: 0;
+    }
+
+    .entry-meta,
+    .price {
+        margin: 6px 0 0;
+    }
+
+    .entry-summary,
+    .entry-content {
+        border: 1px solid $lightGrey;
+        border-top: 0;
+        border-radius: 0 0 4px 4px;
+        margin: 0;
+        padding: 0 20px 0;
+    }
+
+    .more-link {
+        font-size: $sizeTextSmall;
+        display: inline-block;
+
+        &:after {
+            @extend %faIcon;
+            content: '\f054';
+            font-size: 12px;
+            margin: 0 0 0 5px;
+        }
+    }
+}
+
+.posts-grid {
+    margin: 0 -15px;
+
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+
+    .hentry {
+        @include gridColumn;
+    }
+
+    .hentry {
+        margin: 0 auto 40px;
+        position: relative;
+
+        &:before {
+            border-radius: 4px;
+            box-shadow: $blockShadow;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 15px;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            z-index: -1;
+        }
+    }
+
+    .sticky {
+        .entry-header,
+        .entry-summary,
+        .entry-footer {
+            background: $lightBgColor;
+        }
+    }
+
+    .post-thumbnail {
+        img {
+            border-radius: 4px 4px 0 0;
+        }
+    }
+
+    .entry-header {
+        border: 1px solid $lightGrey;
+        border-bottom: 0;
+        border-radius: 4px;
+        padding: 20px;
+    }
+
+    .has-post-thumbnail .entry-header {
+        border-top: 0;
+        border-radius: 0;
+    }
+
+    .entry-title {
+        font-size: $sizeH4;
+        margin: 0;
+    }
+
+    .entry-meta + .entry-title {
+        margin-top: 6px;
+    }
+
+    .cat-links {
+        margin-right: 20px;
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .entry-summary {
+        border: 1px solid $lightGrey;
+        padding: 20px 20px 0;
+    }
+
+    .entry-header + .entry-summary {
+        border-top: 0;
+        padding-top: 0;
+    }
+
+    .entry-footer {
+        border: 1px solid $lightGrey;
+        border-top: 0;
+        border-radius: 0 0 4px 4px;
+        font-size: $sizeTextSmall;
+        padding: 10px 20px;
+
+        &:after {
+            @extend %clearAfter;
+        }
+    }
+
+    .comments-link {
+        margin-right: 20px;
+    }
+
+    .more-link {
+        float: right;
+
+        &:after {
+            @extend %faIcon;
+            content: '\f054';
+            font-size: 12px;
+            margin: 0 0 0 5px;
+        }
+    }
+}
+
+.post-password-form {
+    input[type="submit"] {
+        @extend %button;
+    }
+}
+
+.post-navigation {
+    margin: 40px 0 20px;
+
+    .nav-links {
+        &:after {
+            @extend %clearAfter;
+        }
+    }
+
+    .nav-previous,
+    .nav-next {
+        a {
+            display: block;
+        }
+    }
+
+    .nav-next {
+        border-top: 1px solid $lightGrey;
+    }
+
+    .nav-previous .meta-nav:before {
+        @extend %faIcon;
+        content: '\f053';
+        font-size: 12px;
+        margin: 0 5px 0 0;
+    }
+
+    .nav-next .meta-nav:after {
+        @extend %faIcon;
+        content: '\f054';
+        font-size: 12px;
+        margin: 0 0 0 5px;
+    }
+
+    .post-title {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .posts-grid {
+        .hentry {
+            float: left;
+            width: 50%;
+        }
+
+        .hentry:nth-child(2n+1) {
+            clear: left;
+        }
+    }
+
+    .post-navigation {
+        .nav-links {
+            > div {
+                width: 50%;
+            }
+
+            .nav-previous {
+                float: left;
+            }
+
+            .nav-next {
+                border-top: 0;
+                float: right;
+                text-align: right;
+            }
+        }
+    }
+}

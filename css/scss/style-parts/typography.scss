@@ -1,0 +1,110 @@
+body {
+    font-size: 16px;
+    line-height: $lineHeightDefault;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: $lineHeightHeading;
+    margin: 0 0 1.2rem;
+}
+
+h1 {
+    font-size: $sizeH1;
+}
+
+h2 {
+    font-size: $sizeH2;
+}
+
+h3 {
+    font-size: $sizeH3;
+}
+
+h4 {
+    font-size: $sizeH4;
+}
+
+h5 {
+    font-size: $sizeH5;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: $sizeH6;
+}
+
+p, ul, ol, table, dd, address, pre {
+    margin: 0 0 $marginBottom;
+}
+
+blockquote {
+    font-size: $sizeBlockquote;
+    font-style: italic;
+    margin: 0;
+    padding: 0 2em;
+    position: relative;
+}
+
+table {
+    border: 1px solid $lightGrey;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table th,
+table td {
+    border: 1px solid $lightGrey;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+li {
+    > ul, > ol {
+        margin-bottom: 0;
+    }
+}
+
+em, cite, i {
+    font-style: italic;
+}
+
+code, kbd, tt, var, samp, pre {
+    font-family: Inconsolata, monospace;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.heading {
+    margin: 0 auto 40px;
+    max-width: 600px;
+    padding: 0 0 20px;
+    position: relative;
+    text-align: center;
+
+    &:before {
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 2px;
+        left: 50%;
+        margin: 0 0 0 -40px;
+        position: absolute;
+        width: 80px;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__subtitle {
+        margin: 6px 0 0;
+    }
+}

@@ -1,0 +1,40 @@
+.footer {
+    background: $lightBgColor;
+    border-top: 1px solid $lightGrey;
+    padding: 20px 0 0;
+
+    .footer-copy,
+    .menu {
+        @include gridColumn;
+        float: left;
+    }
+
+    .footer-copy {
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    .menu {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        font-size: $sizeTextSmall;
+        .menu {
+            float: right;
+
+            li {
+                margin-left: 10px;
+                margin-right: 0;
+            }
+        }
+    }
+}

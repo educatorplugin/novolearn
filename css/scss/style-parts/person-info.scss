@@ -1,0 +1,29 @@
+.person-info {
+    margin: 40px 0 0;
+
+    &__image {
+        float: left;
+        margin: 0 0 20px;
+    }
+
+    &__content {
+        margin: 0 0 20px 110px;
+    }
+
+    .person-name {
+        font-weight: normal;
+        font-size: $sizeH4;
+    }
+
+    .person-bio {
+        margin: 0 0 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .person-info {
+        &__content {
+            margin-left: 126px;
+        }
+    }
+}

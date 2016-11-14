@@ -1,0 +1,120 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.page-container {
+    margin: 0 auto;
+    max-width: 1920px;
+}
+
+.page-section {
+    padding: $marginTopD 0 $marginBottomD;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 760px;
+    padding: 0 15px;
+    position: relative;
+
+    &:after {
+        @extend %clearAfter;
+    }
+}
+
+.page-heading {
+    margin: 0 0 40px;
+
+    .page-title {
+        font-size: $sizeH1;
+        margin: 0;
+    }
+}
+
+.page-section_main {
+    padding: 0;
+
+    .page-content,
+    .page-sidebar {
+        padding-bottom: $marginBottomD;
+    }
+
+    .page-content {
+        padding-top: $marginTopD;
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.clearfix {
+    &:after {
+        @extend %clearAfter;
+    }
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &:after {
+        @extend %clearAfter;
+    }
+}
+
+.col-3, .col-12, .page-content, .page-sidebar {
+    @include gridColumn;
+}
+
+@media (min-width: 992px) {
+    .col-3, .col-12, .page-content, .page-sidebar {
+        float: left;
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+
+    .col-3, .page-sidebar {
+        width: 33.33333333%;
+    }
+
+    .page-sidebar,
+    .page-content {
+        position: relative;
+
+        &:before {
+            background: $lightGrey;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 1px;
+        }
+    }
+
+    .page-content {
+        width: 66.66666667%;
+
+        &:before {
+            right: -16px;
+        }
+    }
+
+    .page-sidebar {
+        padding-left: 45px;
+        padding-top: $marginTopD;
+
+        &:before {
+            left: 15px;
+        }
+    }
+}

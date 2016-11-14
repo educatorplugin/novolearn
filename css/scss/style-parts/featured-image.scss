@@ -1,0 +1,109 @@
+.featured-image {
+    background: $lightBgColor;
+    border-bottom: 1px solid $lightGrey;
+    padding: 40px 0 20px;
+
+    .description {
+        margin: 0 auto;
+        max-width: 420px;
+        padding: 20px 0 0;
+        text-align: center;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .button_secondary {
+            background: transparent;
+            border-color: #222;
+            color: #222;
+
+            &:hover {
+                background: #222;
+                color: #fff;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .featured-image {
+        padding-bottom: 40px;
+
+        .description {
+            padding: 24px 0 0;
+            position: absolute;
+            top: 214px;
+            width: 330px;
+
+            p {
+                margin-bottom: 24px;
+            }
+
+            .button {
+                margin: 0 5px 0 0;
+            }
+
+            &_left {
+                left: 45px;
+            }
+
+            &_center {
+                left: 50%;
+                margin: 0 0 0 -165px;
+            }
+
+            &_right {
+                right: 45px;
+            }
+
+            &_light {
+                color: #fff;
+                text-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+
+                h2 {
+                    color: #fff;
+                }
+
+                .button_secondary {
+                    border-color: #fff;
+                    color: #fff;
+
+                    &:hover {
+                        background: #fff;
+                        color: #222;
+                    }
+                }
+            }
+
+            &_dark {
+                color: #222;
+
+                h2 {
+                    color: #222;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .featured-image {
+        .description {
+            width: 420px;
+
+            h2 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+
+            &_center {
+                margin-left: -210px;
+            }
+        }
+    }
+}

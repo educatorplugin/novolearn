@@ -1,0 +1,685 @@
+@import "modules/variables.scss";
+@import "modules/mixins.scss";
+
+%gridColumnShadow {
+    &:before {
+        border-radius: 4px;
+        box-shadow: $blockShadow;
+        content: '';
+        display: block;
+        height: 100%;
+        left: 15px;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: -1;
+    }
+}
+
+@mixin buyWidget {
+    &__price {
+        background: $lightBgColor;
+        border-right: 0;
+        border-radius: 4px 0 0 4px;
+        display: inline-block;
+        line-height: 1;
+        margin: 0;
+        padding: 11px 18px;
+        position: relative;
+    }
+
+    &__link {
+        @extend %button;
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+.edr-syllabus-title {
+    margin-top: 40px;
+}
+
+.edr-lessons {
+    border-bottom: 1px solid $lightGrey;
+    box-shadow: $blockShadow;
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+
+    .lesson-header {
+        border: 1px solid $lightGrey;
+        border-bottom: 0;
+        padding: 10px 47px 10px 20px;
+        position: relative;
+    }
+
+    .handle {
+        border-left: 1px solid $lightGrey;
+        display: block;
+        font-size: 12px;
+        height: 100%;
+        line-height: 47px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        right: 0;
+        width: 47px;
+
+        &:before {
+            @extend %faIcon;
+            content: '\f078';
+        }
+    }
+
+    .lesson-excerpt {
+        background: $lightBgColor;
+        border: 1px solid $lightGrey;
+        border-bottom: 0;
+        border-top: 0;
+        display: none;
+        padding: 0 47px 10px 20px;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .lesson_open {
+        .lesson-header {
+            background: $lightBgColor;
+        }
+
+        .handle {
+            border: 0;
+
+            &:before {
+                content: '\f077';
+            }
+        }
+
+        .lesson-excerpt {
+            display: block;
+        }
+    }
+}
+
+.edr-course {
+    &__title {
+        a {
+            display: inline-block;
+        }
+    }
+}
+
+.edr-courses {
+    margin: 0 -15px;
+
+    &:after {
+        @extend %clearAfter;
+    }
+
+    .edr-course {
+        @include gridColumn;
+        @extend %gridColumnShadow;
+        margin: 0 0 40px;
+        position: relative;
+
+        .post-thumbnail {
+            margin: 0;
+
+            img {
+                border-radius: 4px 4px 0 0;
+            }
+        }
+
+        &__header {
+            border: 1px solid $lightGrey;
+            border-bottom: 0;
+            border-radius: 4px 4px 0 0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .post-thumbnail + .edr-course__header {
+            border-top: 0;
+            border-radius: 0;
+        }
+
+        &__meta {
+            font-size: $sizeTextSmall;
+            margin: 0 0 6px;
+        }
+
+        .edr-course-categories {
+            margin-right: 20px;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        &__title {
+            margin: 0;
+        }
+
+        &__summary {
+            border: 1px solid $lightGrey;
+            border-top: 0;
+            padding: 0 20px;
+        }
+
+        &__footer {
+            border: 1px solid $lightGrey;
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+            font-size: $sizeTextSmall;
+            padding: 10px 20px;
+        }
+
+        .more-link {
+            float: right;
+
+            &:after {
+                @extend %faIcon;
+                content: '\f054';
+                font-size: 12px;
+                margin: 0 0 0 5px;
+            }
+        }
+    }
+
+    &__pager {
+        @extend %pagination;
+    }
+}
+
+.posts-grid {
+    .edr-course-categories,
+    .price {
+        margin-right: 20px;
+    }
+
+    .edr-course-categories {
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.posts-list {
+    .edr-buy-widget {
+        margin: 10px 0 0;
+    }
+}
+
+.edr-course-info {
+    margin: 0 0 30px;
+
+    &:after {
+        @extend %clearAfter;
+    }
+
+    .edr-meta {
+        margin: 0;
+
+        > span {
+            margin: 0 20px 10px 0;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        .edr-course-difficulty,
+        .edr-course-categories {
+            &:before {
+                @extend %faIcon;
+                background: $lightBgColor;
+                border-radius: 50%;
+                display: inline-block;
+                font-size: 16px;
+                height: 38px;
+                line-height: 38px;
+                margin-right: 10px;
+                text-align: center;
+                width: 38px;
+            }
+        }
+
+        .edr-course-difficulty {
+            &:before {
+                content: '\f080';
+            }
+        }
+
+        .edr-course-categories {
+            &:before {
+                content: '\f07c';
+            }
+        }
+    }
+
+    .edr-buy-widget {
+        @include buyWidget;
+        margin: 10px 0 10px;
+    }
+}
+
+.edr-dl {
+    dt, dd {
+        float: left;
+    }
+
+    dt {
+        width: 30%;
+    }
+
+    dd {
+        width: 70%;
+    }
+
+    &:after {
+        @extend %clearAfter;
+    }
+}
+
+.edr-form {
+    &__legend {
+        font-size: $sizeH2;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    &__fields {
+        margin: 0 0 40px;
+    }
+}
+
+.edr-field {
+    margin: 0 0 20px;
+
+    &__label {
+        margin: 0 0 4px;
+    }
+}
+
+#edr-payment-form {
+    max-width: 400px;
+}
+
+.edr-payment-table {
+    th, td {
+        &:last-child {
+            text-align: right;
+        }
+    }
+}
+
+.edr-payment-summary {
+    text-align: right;
+
+    dt {
+        width: 70%;
+    }
+
+    dd {
+        padding: 0 8px;
+        width: 30%;
+    }
+}
+
+.edr-user-payments {
+    .actions-group {
+        a {
+            margin-right: 5px;
+        }
+    }
+
+    .cancel-payment {
+        color: red;
+
+        &:hover {
+            color: #af0000;
+        }
+    }
+}
+
+.edr-radio {
+    span {
+        vertical-align: middle;
+    }
+}
+
+.edr-button {
+    @extend %button;
+}
+
+.edr-message {
+    min-height: 36px;
+    padding: 6px 0 0 46px;
+    position: relative;
+
+    &:before {
+        @extend %faIcon;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        display: inline-block;
+        height: 36px;
+        left: 0;
+        line-height: 34px;
+        margin: 0 10px 0 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 36px;
+    }
+
+    &.error {
+        color: #a94442;
+
+        &:before {
+            background: #f2dede;
+            border-color: #ebccd1;
+            content: '\f00d';
+        }
+    }
+
+    &.success {
+        color: #3c763d;
+
+        &:before {
+            background: #dff0d8;
+            border-color: #d6e9c6;
+            content: '\f00c';
+        }
+    }
+}
+
+.edr-payment-methods {
+    li {
+        margin: 0 0 10px;
+    }
+}
+
+.edr-questions {
+    box-shadow: $blockShadow;
+    margin: 0 0 20px;
+}
+
+.edr-question {
+    border: 1px solid $lightGrey;
+    margin: 0;
+    padding: 20px;
+
+    + .edr-question {
+        border-top: 0;
+    }
+
+    .answers,
+    .answer {
+        border-top: 1px solid $lightGrey;
+        margin: 20px 0 0;
+        padding: 20px 0 0;
+    }
+
+    .answers {
+        li {
+            + li {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .choice-text {
+        vertical-align: middle;
+    }
+}
+
+.lessons-nav-links {
+    margin: 40px 0 20px;
+
+    &:after {
+        @extend %clearAfter;
+    }
+
+    a {
+        display: block;
+    }
+
+    &__link {
+        &_prev {
+            .hint {
+                &:before {
+                    @extend %faIcon;
+                    content: '\f053';
+                    font-size: 12px;
+                    margin: 0 5px 0 0;
+                }
+            }
+        }
+
+        &_next {
+            margin-top: 10px;
+
+            .hint {
+                &:after {
+                    @extend %faIcon;
+                    content: '\f054';
+                    font-size: 12px;
+                    margin: 0 0 0 5px;
+                }
+            }
+        }
+    }
+}
+
+.edr-breadcrumbs {
+    border-bottom: 1px solid $lightGrey;
+    border-top: 1px solid $lightGrey;
+    font-size: $sizeTextSmall;
+    padding: 10px 0;
+}
+
+.hentry_single {
+    &.edr_lesson {
+        .entry-header {
+            margin: 0;
+        }
+    }
+
+    .edr-breadcrumbs {
+        margin: 10px 0 40px;
+    }
+}
+
+.widget_lessons_list,
+.widget_course_categories {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul a {
+        border: 1px solid transparent;
+        border-left: 0;
+        display: block;
+        padding: 7px 0;
+        position: relative;
+    }
+
+    ul ul a {
+        padding-left: 14px;
+
+        &:before {
+            content: '\25CF';
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 8px;
+            line-height: 10px;
+            left: 0;
+            position: absolute;
+            top: 14px;
+        }
+    }
+}
+
+.widget_lessons_list {
+    .group {
+        margin: 0 0 20px;
+    }
+
+    .group-header {
+        margin: 0 0 6px;
+    }
+}
+
+.edr-memberships {
+    margin: 0 -15px;
+
+    .edr-membership {
+        @include gridColumn;
+        @extend %gridColumnShadow;
+        margin: 0 0 40px;
+        position: relative;
+
+        &__header {
+            border: 1px solid $lightGrey;
+            border-radius: 4px 4px 0 0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        &__summary {
+            border: 1px solid $lightGrey;
+            border-bottom: 0;
+            border-top: 0;
+            overflow: hidden;
+            padding: 20px 20px 0;
+        }
+
+        &__footer {
+            border: 1px solid $lightGrey;
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+            padding: 0 20px 20px;
+            text-align: center;
+
+            a {
+                margin: 0 5px;
+            }
+        }
+
+        &__buy {
+            @extend %button;
+        }
+    }
+
+    &:after {
+        @extend %clearAfter;
+    }
+}
+
+.hentry_single.edr_membership {
+    .edr-buy-widget {
+        @include buyWidget;
+    }
+}
+
+@media (min-width: 768px) {
+    .edr-courses {
+        .edr-course {
+            float: left;
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .edr-memberships {
+        .edr-membership {
+            float: left;
+            width: 50%;
+
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .lessons-nav-links {
+        &__link {
+            float: left;
+            width: 50%;
+
+            &_next {
+                border-top: 0;
+                float: right;
+                margin-top: 0;
+                text-align: right;
+            }
+        }
+    }
+
+    .widget_lessons_list .current-lesson a,
+    .widget_course_categories > ul > .current-cat > a,
+    .widget_course_categories > ul > .current-cat-ancestor > a {
+        background: $lightBgColor;
+        border-color: $lightGrey;
+        left: -29px;
+        padding-left: 29px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .edr-courses_3 {
+        .edr-course {
+            width: 33.33333333%;
+
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .edr-memberships_3 {
+        .edr-membership {
+            width: 33.33333333%;
+
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+    }
+
+    .edr-course-info {
+        .edr-meta {
+            float: left;
+            margin: 0;
+            max-width: 60%;
+        }
+
+        .edr-buy-widget {
+            float: right;
+            margin: 0;
+            max-width: 40%;
+        }
+    }
+}

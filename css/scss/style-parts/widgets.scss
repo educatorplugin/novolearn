@@ -1,0 +1,140 @@
+.widget {
+    .post-date {
+        display: block;
+        font-size: $sizeTextSmall;
+    }
+}
+
+.widget_recent_entries,
+.widget_recent_comments,
+.widget_rss,
+.widget_categories,
+.widget_archive,
+.widget_meta {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        + li {
+            margin-top: 16px;
+        }
+    }
+}
+
+.widget_recent_entries,
+.widget_rss {
+    li > a {
+        display: inline-block;
+    }
+}
+
+.widget_rss {
+    .rss-date {
+        display: block;
+        font-size: $sizeTextSmall;
+        margin: 0 0 10px;
+    }
+}
+
+.widget_nav_menu,
+.widget_pages {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    a {
+        border: 1px solid transparent;
+        border-left: 0;
+        display: block;
+        padding: 7px 0;
+        position: relative;
+    }
+
+    ul ul a {
+        padding-left: 14px;
+
+        &:before {
+            content: '\25CF';
+            display: block;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 8px;
+            line-height: 10px;
+            left: 0;
+            position: absolute;
+            top: 14px;
+        }
+    }
+
+    ul ul ul a {
+        margin-left: 14px;
+    }
+
+    ul ul ul ul a {
+        margin-left: 28px;
+    }
+}
+
+.tagcloud {
+    a {
+        border: 1px solid $lightGrey;
+        font-size: $sizeTextSmall;
+        display: inline-block;
+        line-height: 26px;
+        margin: 2px 0;
+        padding: 0 10px;
+    }
+}
+
+.widget_calendar {
+    caption {
+        padding: 0 0 10px;
+        text-align: left;
+    }
+
+    th, td {
+        text-align: center;
+    }
+}
+
+.page-sidebar {
+    .widget {
+        margin-bottom: 20px;
+
+        + .widget {
+            margin-top: 40px;
+            padding-top: 40px;
+            position: relative;
+
+            &:before {
+                background: $lightGrey;
+                content: '';
+                display: block;
+                height: 1px;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 80px;
+            }
+        }
+
+        &__title {
+            font-size: $sizeH5;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .widget_nav_menu .menu > .current-menu-item > a,
+    .widget_nav_menu .menu > .current-menu-ancestor > a,
+    .widget_pages > ul > .current_page_item > a,
+    .widget_pages > ul > .current_page_ancestor > a {
+        background: $lightBgColor;
+        border-color: $lightGrey;
+        left: -29px;
+        padding-left: 29px;
+        width: 100%;
+    }
+}
