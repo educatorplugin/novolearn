@@ -126,12 +126,36 @@ function novolearn_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'fixed_header', array(
 		'type'              => 'theme_mod',
-		'default'           => '1',
+		'default'           => 1,
 		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( 'fixed_header', array(
 		'label'   => __( 'Fixed Header', 'novolearn' ),
+		'section' => 'novolearn_header',
+		'type'    => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'header_search_button', array(
+		'type'              => 'theme_mod',
+		'default'           => 1,
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( 'header_search_button', array(
+		'label'   => __( 'Show search button', 'novolearn' ),
+		'section' => 'novolearn_header',
+		'type'    => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'enable_toolbar', array(
+		'type'              => 'theme_mod',
+		'default'           => 0,
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( 'enable_toolbar', array(
+		'label'   => __( 'Enable Toolbar', 'novolearn' ),
 		'section' => 'novolearn_header',
 		'type'    => 'checkbox',
 	) );

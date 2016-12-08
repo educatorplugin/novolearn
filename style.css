@@ -1393,7 +1393,7 @@ form span.required {
   .posts-grid .entry-header {
     border: 1px solid #e0e0e0;
     border-bottom: 0;
-    border-radius: 4px;
+    border-radius: 4px 4px 0 0;
     padding: 20px; }
   .posts-grid .has-post-thumbnail .entry-header {
     border-top: 0;

@@ -20,6 +20,7 @@ if ( is_front_page() && ! is_home() && has_post_thumbnail() ) {
 </head>
 <body <?php body_class(); ?>>
 	<div class="page-container">
+		<?php if ( get_theme_mod( 'enable_toolbar', 0 ) ) : ?>
 		<div id="js-top-toolbar" class="top-toolbar">
 			<div class="container">
 				<div class="top-toolbar__item left">
@@ -61,6 +62,7 @@ if ( is_front_page() && ! is_home() && has_post_thumbnail() ) {
 				<?php endif; ?>
 			</div>
 		</div>
+		<?php endif; ?>
 
 		<header id="js-header" class="<?php echo esc_attr( $header_class ); ?>" data-fixed="<?php echo intval( $fixed_header ); ?>">
 			<div class="header__fixed">
@@ -100,6 +102,7 @@ if ( is_front_page() && ! is_home() && has_post_thumbnail() ) {
 						?>
 					</div>
 
+					<?php if ( get_theme_mod( 'header_search_button', 1 ) ) : ?>
 					<div class="search-trigger-wrap">
 						<a id="js-search-trigger" class="search-trigger" href="#" title="<?php _e( 'Search', 'novolearn' ); ?>"><span class="fa fa-search"></span></a>
 					</div>
@@ -110,6 +113,7 @@ if ( is_front_page() && ! is_home() && has_post_thumbnail() ) {
 							<button type="submit"><span class="fa fa-search"></span></button>
 						</form>
 					</div>
+					<?php endif; ?>
 
 					<nav class="main-nav">
 						<?php

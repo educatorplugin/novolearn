@@ -7,7 +7,7 @@
 	var initHeaderScroll = function() {
 		var win = $(window),
 		    header = $('#js-header'),
-		    toolbarHeight = 46,
+		    toolbarHeight = $('#js-top-toolbar').length ? 46 : 0,
 		    headerResizeOffset = 134,
 		    firstCall = true,
 		    hasTransitions = false;
