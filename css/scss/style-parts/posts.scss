@@ -368,3 +368,19 @@
         }
     }
 }
+
+@media (min-width: 992px) {
+    .posts-grid-3 {
+        .hentry {
+            width: 33.33333333%;
+        }
+
+        .hentry:nth-child(2n+1) {
+            clear: none;
+        }
+
+        .hentry:nth-child(3n+1) {
+            clear: left;
+        }
+    }
+}

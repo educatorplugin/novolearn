@@ -6,8 +6,10 @@
 $page_id = get_the_ID();
 $child_pages_query = new WP_Query( array(
 	'post_type'   => 'page',
-	'post_status' => array( 'published', 'private' ),
+	'post_status' => array( 'publish', 'private' ),
 	'post_parent' => $page_id,
+	'order_by'    => 'menu_order',
+	'order'       => 'ASC',
 ) );
 
 // Get image caption settings.
@@ -15,7 +17,7 @@ $caption_position = get_post_meta( $page_id, 'image_caption_position', true );
 $caption_style = get_post_meta( $page_id, 'image_caption_style', true );
 $caption_classes = 'description';
 
-if ( in_array( $caption_position, array( 'left', 'right' ) ) ) {
+if ( in_array( $caption_position, array( 'left', 'center', 'right' ) ) ) {
 	$caption_classes .= ' description_' . $caption_position;
 }
 
@@ -41,7 +43,7 @@ if ( in_array( $caption_style, array( 'light', 'dark' ) ) ) {
 
 <?php if ( $child_pages_query->have_posts() ) : ?>
 	<?php while ( $child_pages_query->have_posts() ) : $child_pages_query->the_post(); ?>
-		<div class="page-section">
+		<div id="page-section-<?php the_ID(); ?>" class="page-section">
 			<div class="container">
 				<?php
 					$child_page_id = get_the_ID();

@@ -510,16 +510,20 @@ img {
   margin-left: -15px;
   margin-right: -15px; }
 
-.col-3, .col-12, .page-content, .page-sidebar {
+.col-3, .col-4, .col-6, .col-8, .col-12, .page-content, .page-sidebar {
   padding: 0 15px; }
 
 @media (min-width: 992px) {
-  .col-3, .col-12, .page-content, .page-sidebar {
+  .col-3, .col-4, .col-6, .col-8, .col-12, .page-content, .page-sidebar {
     float: left; }
   .container {
     max-width: 1140px; }
-  .col-3, .page-sidebar {
+  .col-4, .page-sidebar {
     width: 33.33333333%; }
+  .col-6 {
+    width: 50%; }
+  .col-8 {
+    width: 66.66666666%; }
   .page-sidebar,
   .page-content {
     position: relative; }
@@ -1460,6 +1464,14 @@ form span.required {
     border-top: 0;
     float: right;
     text-align: right; } }
+
+@media (min-width: 992px) {
+  .posts-grid-3 .hentry {
+    width: 33.33333333%; }
+  .posts-grid-3 .hentry:nth-child(2n+1) {
+    clear: none; }
+  .posts-grid-3 .hentry:nth-child(3n+1) {
+    clear: left; } }
 
 .person-info {
   margin: 40px 0 0; }
