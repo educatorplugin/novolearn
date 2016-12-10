@@ -1,10 +1,11 @@
 <?php
 $post_id = get_the_ID();
 $is_course = novolearn_educator_enabled() && EDR_PT_COURSE == get_post_type();
+$style_class = get_theme_mod( 'post_style', 'nl-post-lite' );
 ?>
 <?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 <?php endif; ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $style_class ); ?>>
 	<?php novolearn_post_thumb(); ?>
 
 	<?php

@@ -197,19 +197,6 @@
     .hentry {
         margin: 0 auto 40px;
         position: relative;
-
-        &:before {
-            border-radius: 4px;
-            box-shadow: $blockShadow;
-            content: '';
-            display: block;
-            height: 100%;
-            left: 15px;
-            position: absolute;
-            top: 0;
-            right: 15px;
-            z-index: -1;
-        }
     }
 
     .sticky {
@@ -221,21 +208,7 @@
     }
 
     .post-thumbnail {
-        img {
-            border-radius: 4px 4px 0 0;
-        }
-    }
-
-    .entry-header {
-        border: 1px solid $lightGrey;
-        border-bottom: 0;
-        border-radius: 4px 4px 0 0;
-        padding: 20px;
-    }
-
-    .has-post-thumbnail .entry-header {
-        border-top: 0;
-        border-radius: 0;
+        img {border-radius: 4px;}
     }
 
     .entry-title {
@@ -255,22 +228,8 @@
         }
     }
 
-    .entry-summary {
-        border: 1px solid $lightGrey;
-        padding: 20px 20px 0;
-    }
-
-    .entry-header + .entry-summary {
-        border-top: 0;
-        padding-top: 0;
-    }
-
     .entry-footer {
-        border: 1px solid $lightGrey;
-        border-top: 0;
-        border-radius: 0 0 4px 4px;
         font-size: $sizeTextSmall;
-        padding: 10px 20px;
 
         &:after {
             @extend %clearAfter;
@@ -289,6 +248,60 @@
             content: '\f054';
             font-size: 12px;
             margin: 0 0 0 5px;
+        }
+    }
+
+    .nl-post-lite {
+        .entry-header {
+            margin: 0 0 20px;
+        }
+    }
+
+    .nl-post-block {
+        .post-thumbnail {
+            img {border-radius: 4px 4px 0 0;}
+        }
+
+        .entry-header {
+            border: 1px solid $lightGrey;
+            border-bottom: 0;
+            border-radius: 4px 4px 0 0;
+            padding: 20px;
+        }
+
+        .has-post-thumbnail .entry-header {
+            border-top: 0;
+            border-radius: 0;
+        }
+
+        .entry-summary {
+            border: 1px solid $lightGrey;
+            padding: 20px 20px 0;
+        }
+
+        .entry-header + .entry-summary {
+            border-top: 0;
+            padding-top: 0;
+        }
+
+        .entry-footer {
+            border: 1px solid $lightGrey;
+            border-top: 0;
+            border-radius: 0 0 4px 4px;
+            padding: 10px 20px;
+        }
+
+        &:before {
+            border-radius: 4px;
+            box-shadow: $blockShadow;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 15px;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            z-index: -1;
         }
     }
 }

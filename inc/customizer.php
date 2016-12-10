@@ -80,6 +80,20 @@ function novolearn_sanitize_color( $color ) {
 }
 
 /**
+ * Sanitize post style setting.
+ *
+ * @param string $style
+ * @return style
+ */
+function novolearn_sanitize_post_style( $style ) {
+	if ( in_array( $style, array( 'nl-post-lite', 'nl-post-block' ) ) ) {
+		return $style;
+	}
+
+	return 'nl-post-lite';
+}
+
+/**
  * Sanitize text to allow only a limited amount of HTML tags.
  *
  * @param string $text
@@ -329,6 +343,22 @@ function novolearn_customize_register( $wp_customize ) {
 		'section' => 'novolearn_layout',
 		'type'    => 'select',
 		'choices' => novolearn_get_layout_choices(),
+	) );
+
+	$wp_customize->add_setting( 'post_style', array(
+		'type'              => 'theme_mod',
+		'default'           => 'nl-post-lite',
+		'sanitize_callback' => 'novolearn_sanitize_post_style',
+	) );
+
+	$wp_customize->add_control( 'post_style', array(
+		'label'   => __( 'Post Style', 'novolearn' ),
+		'section' => 'novolearn_layout',
+		'type'    => 'select',
+		'choices' => array(
+			'nl-post-lite' => __( 'Lite', 'novolearn' ),
+			'nl-post-block' => __( 'Block', 'novolearn' ),
+		),
 	) );
 
 	// Social.
