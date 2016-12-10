@@ -81,9 +81,9 @@ if ( is_front_page() && ! is_home() && has_post_thumbnail() ) {
 									$logo_img .= ', ' . esc_url( $logo2x_src ) . ' 2x';
 								}
 
-								$logo_img .= '" width="' . intval( $logo1x[1] ) . '" height="' . intval( $logo1x[2] ) . '">';
+								$logo_img .= '" width="' . intval( $logo1x[1] ) . '" height="' . intval( $logo1x[2] ) . '" alt="">';
 
-								printf( '<a class="custom-logo-link" href="%1$s" rel="home" itemprop="url">%2$s</a>',
+								printf( '<a class="custom-logo-link" href="%1$s" rel="home">%2$s</a>',
 									esc_url( home_url( '/' ) ),
 									$logo_img
 								);
