@@ -134,13 +134,14 @@ add_filter( 'widget_tag_cloud_args', 'novolearn_tag_cloud_args' );
  * @param string $url
  * @return string
  */
-function novolearn_oembed_dataparse( $html, $data, $url ) {
-	if ( isset( $data->type ) && 'video' == $data->type ) {
-		return '<div class="video-container">' . $html . '</div>';
+function novolearn_oembed_html( $html, $url, $attr ) {
+	if ( false !== strpos( $html, '<iframe' ) ) {
+		return '<div class="nl-iframe-container">' . $html . '</div>';
 	}
+
 	return $html;
 }
-add_filter( 'oembed_dataparse', 'novolearn_oembed_dataparse', 11, 3 );
+add_filter( 'embed_oembed_html', 'novolearn_oembed_html', 11, 3 );
 
 /**
  * Remove default styles from the recent comments widget.
