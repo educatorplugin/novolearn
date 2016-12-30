@@ -95,6 +95,14 @@ a,
 	color: <?php echo $main_color; ?>;
 }
 
+.nl-post-lite.sticky .entry-header {
+	border-color: <?php echo $main_color; ?>;
+}
+
+.nl-post-block.sticky .entry-summary:before {
+	background: <?php echo $main_color; ?>;
+}
+
 <?php
 // Educator related CSS.
 if ( novolearn_educator_enabled() ) : ?>

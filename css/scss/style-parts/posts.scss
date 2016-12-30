@@ -185,26 +185,14 @@
     margin: 0 -15px;
 
     &:after {
-        clear: both;
-        content: '';
-        display: table;
+        @extend %clearAfter;
     }
 
     .hentry {
         @include gridColumn;
-    }
-
-    .hentry {
         margin: 0 auto 40px;
         position: relative;
-    }
-
-    .sticky {
-        .entry-header,
-        .entry-summary,
-        .entry-footer {
-            background: $lightBgColor;
-        }
+        z-index: 1;
     }
 
     .post-thumbnail {
@@ -225,6 +213,12 @@
 
         a {
             text-decoration: underline;
+        }
+    }
+
+    .entry-summary {
+        &:after {
+            @extend %clearAfter;
         }
     }
 
@@ -252,8 +246,20 @@
     }
 
     .nl-post-lite {
+        .post-thumbnail {
+            margin: 0 0 20px;
+        }
+
         .entry-header {
             margin: 0 0 20px;
+        }
+
+        &.sticky {
+            .entry-header {
+                border-left-width: 4px;
+                border-left-style: solid;
+                padding: 0 0 0 12px;
+            }
         }
     }
 
@@ -269,7 +275,7 @@
             padding: 20px;
         }
 
-        .has-post-thumbnail .entry-header {
+        &.has-post-thumbnail .entry-header {
             border-top: 0;
             border-radius: 0;
         }
@@ -302,6 +308,20 @@
             top: 0;
             right: 15px;
             z-index: -1;
+        }
+
+        &.sticky .entry-summary {
+            position: relative;
+
+            &:before {
+                bottom: 0;
+                content: '';
+                display: block;
+                height: 3px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
         }
     }
 }

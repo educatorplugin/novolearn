@@ -9,7 +9,7 @@
     display: inline-block;
     font-size: 16px;
     line-height: 1;
-    padding: 9px 16px;
+    padding: 11px 18px;
     text-shadow: none;
     transition: background .2s ease-out, color .2s ease-out;
 }
@@ -40,7 +40,7 @@
     }
 
     .page-numbers {
-        border: 2px solid $lightGrey;
+        border: 1px solid $lightGrey;
         border-radius: 4px;
         display: inline-block;
         margin: 0 0 4px;
