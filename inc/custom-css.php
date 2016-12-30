@@ -78,11 +78,7 @@ a.page-numbers,
 }
 
 .super-nav .menu a,
-.post-navigation .post-title,
-.widget_nav_menu .current-menu-item > a,
-.widget_nav_menu .current-menu-ancestor > a,
-.widget_pages .current_page_item > a,
-.widget_pages .current_page_ancestor > a {
+.post-navigation .post-title {
 	color: <?php echo $body_color; ?>;
 }
 
@@ -91,7 +87,9 @@ a,
 .main-nav .menu > .current-menu-item > a,
 .search-trigger:hover,
 .novo-dropdown_open .novo-dropdown__label,
-.posts-grid .price {
+.posts-grid .price,
+.widget_nav_menu .current-menu-item > a,
+.widget_pages .current_page_item > a {
 	color: <?php echo $main_color; ?>;
 }
 
@@ -132,7 +130,6 @@ if ( novolearn_educator_enabled() ) : ?>
 .edr-lessons .handle,
 .edr-course__meta,
 .edr-breadcrumbs,
-.widget_lessons_list ul a,
 .edr-lessons .lesson-excerpt,
 .edr-course__meta a,
 .edr-course__footer a {
@@ -146,9 +143,6 @@ if ( novolearn_educator_enabled() ) : ?>
 	color: <?php echo $headings_color; ?>;
 }
 
-.widget_lessons_list .current-lesson a,
-.widget_lessons_list ul a:hover,
-.widget_course_categories .current-cat > a,
 .edr-meta a,
 .edr-lessons .lesson-title,
 .lessons-nav-links .lesson-title {
@@ -159,6 +153,8 @@ if ( novolearn_educator_enabled() ) : ?>
 	color: <?php echo $hover_color; ?>;
 }
 
+.widget_lessons_list .current-lesson a,
+.widget_course_categories .current-cat > a,
 .edr-course .price,
 .posts-list .price,
 .edr-membership__price {

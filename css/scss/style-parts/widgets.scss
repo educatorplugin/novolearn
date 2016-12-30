@@ -46,8 +46,6 @@
     }
 
     a {
-        border: 1px solid transparent;
-        border-left: 0;
         display: block;
         padding: 7px 0;
         position: relative;
@@ -123,18 +121,5 @@
         &__title {
             font-size: $sizeH5;
         }
-    }
-}
-
-@media (min-width: 992px) {
-    .widget_nav_menu .menu > .current-menu-item > a,
-    .widget_nav_menu .menu > .current-menu-ancestor > a,
-    .widget_pages > ul > .current_page_item > a,
-    .widget_pages > ul > .current_page_ancestor > a {
-        background: $lightBgColor;
-        border-color: $lightGrey;
-        left: -29px;
-        padding-left: 29px;
-        width: 100%;
     }
 }

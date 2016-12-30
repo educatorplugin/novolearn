@@ -521,8 +521,6 @@
     }
 
     ul a {
-        border: 1px solid transparent;
-        border-left: 0;
         display: block;
         padding: 7px 0;
         position: relative;
@@ -648,16 +646,6 @@
                 text-align: right;
             }
         }
-    }
-
-    .widget_lessons_list .current-lesson a,
-    .widget_course_categories > ul > .current-cat > a,
-    .widget_course_categories > ul > .current-cat-ancestor > a {
-        background: $lightBgColor;
-        border-color: $lightGrey;
-        left: -29px;
-        padding-left: 29px;
-        width: 100%;
     }
 }
 
